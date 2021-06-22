@@ -8,12 +8,22 @@ global:
   - update_time
   max_depth: -1
   license_year: 2020
+add_context_artifacts_and_executions_sample: {}
+add_context_children_sample: {}
+add_execution_events_sample: {}
+add_trial_measurement_sample: {}
+batch_create_features_sample: {}
 batch_migrate_resources_sample: {}
+batch_read_feature_values_sample: {}
 cancel_batch_prediction_job_sample: {}
 cancel_custom_job_sample: {}
 cancel_data_labeling_job_sample: {}
 cancel_hyperparameter_tuning_job_sample: {}
+cancel_pipeline_job_sample: {}
 cancel_training_pipeline_sample: {}
+check_trial_early_stopping_state_sample: {}
+complete_trial_sample: {}
+create_artifact_sample: {}
 create_batch_prediction_job_bigquery_sample:
   gapic_module_child: aiplatform_v1beta1
   namespace: null
@@ -30,6 +40,7 @@ create_batch_prediction_job_text_sentiment_analysis_sample: {}
 create_batch_prediction_job_video_action_recognition_sample: {}
 create_batch_prediction_job_video_classification_sample: {}
 create_batch_prediction_job_video_object_tracking_sample: {}
+create_context_sample: {}
 create_custom_job_python_package_sample: {}
 create_custom_job_sample: {}
 create_data_labeling_job_active_learning_sample: {}
@@ -69,9 +80,24 @@ create_endpoint_sample:
   skip:
   - traffic_split
   - deployed_models
+create_entity_type_sample: {}
+create_execution_sample: {}
+create_feature_sample: {}
+create_featurestore_sample: {}
 create_hyperparameter_tuning_job_python_package_sample: {}
 create_hyperparameter_tuning_job_sample: {}
+create_index_endpoint_sample: {}
+create_index_sample: {}
+create_metadata_schema_sample: {}
+create_metadata_store_sample: {}
+create_model_deployment_monitoring_job_sample: {}
+create_pipeline_job_sample: {}
 create_specialist_pool_sample: {}
+create_study_sample: {}
+create_tensorboard_experiment_sample: {}
+create_tensorboard_run_sample: {}
+create_tensorboard_sample: {}
+create_tensorboard_time_series_sample: {}
 create_training_pipeline_custom_job_sample: {}
 create_training_pipeline_custom_training_managed_dataset_sample: {}
 create_training_pipeline_image_classification_sample:
@@ -102,15 +128,32 @@ create_training_pipeline_video_classification_sample:
 create_training_pipeline_video_object_tracking_sample:
   schema_types:
     training_task_inputs_dict: trainingjob.definition.AutoMlVideoObjectTrackingInputs
+create_trial_sample: {}
 delete_batch_prediction_job_sample: {}
+delete_context_sample: {}
 delete_custom_job_sample: {}
 delete_data_labeling_job_sample: {}
 delete_dataset_sample: {}
 delete_endpoint_sample: {}
+delete_entity_type_sample: {}
+delete_feature_sample: {}
+delete_featurestore_sample: {}
 delete_hyperparameter_tuning_job_sample: {}
+delete_index_endpoint_sample: {}
+delete_index_sample: {}
+delete_metadata_store_sample: {}
+delete_model_deployment_monitoring_job_sample: {}
 delete_model_sample: {}
+delete_pipeline_job_sample: {}
 delete_specialist_pool_sample: {}
+delete_study_sample: {}
+delete_tensorboard_experiment_sample: {}
+delete_tensorboard_run_sample: {}
+delete_tensorboard_sample: {}
+delete_tensorboard_time_series_sample: {}
 delete_training_pipeline_sample: {}
+delete_trial_sample: {}
+deploy_index_sample: {}
 deploy_model_custom_trained_model_sample:
   max_depth: 0
   resource_name: endpoint
@@ -150,6 +193,7 @@ export_data_sample:
   resource_name: dataset
 export_evaluated_data_items_sample:
   resource_name: model_evaluation
+export_feature_values_sample: {}
 export_model_sample:
   lro_metadata:
   - output_info
@@ -167,16 +211,28 @@ export_model_video_classification_sample:
 export_model_video_object_tracking_sample:
   lro_metadata:
   - output_info
+export_tensorboard_time_series_data_sample: {}
 get_annotation_spec_sample: {}
+get_artifact_sample: {}
 get_batch_prediction_job_sample:
   skip:
   - dedicated_resources
   - manual_batch_tuning_parameters
+get_context_sample: {}
 get_custom_job_sample: {}
 get_data_labeling_job_sample: {}
 get_dataset_sample: {}
 get_endpoint_sample: {}
+get_entity_type_sample: {}
+get_execution_sample: {}
+get_feature_sample: {}
+get_featurestore_sample: {}
 get_hyperparameter_tuning_job_sample: {}
+get_index_endpoint_sample: {}
+get_index_sample: {}
+get_metadata_schema_sample: {}
+get_metadata_store_sample: {}
+get_model_deployment_monitoring_job_sample: {}
 get_model_evaluation_image_classification_sample: {}
 get_model_evaluation_image_object_detection_sample: {}
 get_model_evaluation_sample:
@@ -208,8 +264,15 @@ get_model_evaluation_video_object_tracking_sample:
 get_model_sample:
   skip:
   - explanation_spec
+get_pipeline_job_sample: {}
 get_specialist_pool_sample: {}
+get_study_sample: {}
+get_tensorboard_experiment_sample: {}
+get_tensorboard_run_sample: {}
+get_tensorboard_sample: {}
+get_tensorboard_time_series_sample: {}
 get_training_pipeline_sample: {}
+get_trial_sample: {}
 import_data_image_classification_sample:
   resource_name: dataset
 import_data_image_classification_single_label_sample:
@@ -239,20 +302,42 @@ import_data_video_classification_sample:
 import_data_video_object_tracking_sample:
   timeout: 1800
   resource_name: dataset
+import_feature_values_sample: {}
 list_annotations_sample: {}
+list_artifacts_sample: {}
 list_batch_prediction_jobs_sample: {}
+list_contexts_sample: {}
 list_custom_jobs_sample: {}
 list_data_items_sample: {}
 list_data_labeling_jobs_sample: {}
 list_datasets_sample: {}
 list_endpoints_sample: {}
+list_entity_types_sample: {}
+list_executions_sample: {}
+list_features_sample: {}
+list_featurestores_sample: {}
 list_hyperparameter_tuning_jobs_sample: {}
+list_index_endpoints_sample: {}
+list_indexes_sample: {}
+list_metadata_schemas_sample: {}
+list_metadata_stores_sample: {}
+list_model_deployment_monitoring_jobs_sample: {}
 list_model_evaluation_slices_sample: {}
 list_model_evaluations_sample: {}
 list_model_evaluations_tabular_forecasting_sample: {}
 list_models_sample: {}
+list_optimal_trials_sample: {}
+list_pipeline_jobs_sample: {}
 list_specialist_pools_sample: {}
+list_studies_sample: {}
+list_tensorboard_experiments_sample: {}
+list_tensorboard_runs_sample: {}
+list_tensorboard_time_series_sample: {}
+list_tensorboards_sample: {}
 list_training_pipelines_sample: {}
+list_trials_sample: {}
+lookup_study_sample: {}
+pause_model_deployment_monitoring_job_sample: {}
 predict_custom_trained_model_sample:
   max_depth: 1
   resource_name: endpoint
@@ -323,13 +408,39 @@ predict_text_sentiment_analysis_sample:
   comments:
     predictions: See gs://google-cloud-aiplatform/schema/predict/prediction/text_sentiment.yaml
       for the format of the predictions.
+query_artifact_lineage_subgraph_sample: {}
+query_context_lineage_subgraph_sample: {}
+query_execution_inputs_and_outputs_sample: {}
+read_feature_values_sample: {}
+read_tensorboard_blob_data_sample: {}
+read_tensorboard_time_series_data_sample: {}
+resume_model_deployment_monitoring_job_sample: {}
+search_features_sample: {}
 search_migratable_resources_sample: {}
+search_model_deployment_monitoring_stats_anomalies_sample: {}
+stop_trial_sample: {}
+streaming_read_feature_values_sample: {}
+suggest_trials_sample: {}
+undeploy_index_sample: {}
 undeploy_model_sample:
   resource_name: endpoint
+update_artifact_sample: {}
+update_context_sample: {}
 update_dataset_sample: {}
 update_endpoint_sample: {}
+update_entity_type_sample: {}
+update_execution_sample: {}
+update_feature_sample: {}
+update_featurestore_sample: {}
+update_index_endpoint_sample: {}
+update_index_sample: {}
+update_model_deployment_monitoring_job_sample: {}
 update_model_sample: {}
 update_specialist_pool_sample: {}
+update_tensorboard_experiment_sample: {}
+update_tensorboard_run_sample: {}
+update_tensorboard_sample: {}
+update_tensorboard_time_series_sample: {}
 upload_model_custom_container_sample:
   timeout: 1800
 upload_model_explain_image_managed_container_sample:
@@ -342,3 +453,4 @@ upload_model_managed_container_sample:
   timeout: 1800
 upload_model_sample:
   timeout: 1800
+write_tensorboard_run_data_sample: {}

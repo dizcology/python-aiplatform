@@ -1,6 +1,18 @@
+add_context_artifacts_and_executions:
+- ''
+add_context_children:
+- ''
+add_execution_events:
+- ''
+add_trial_measurement:
+- ''
+batch_create_features:
+- ''
 batch_delete_data_items:
 - ''
 batch_migrate_resources:
+- ''
+batch_read_feature_values:
 - ''
 cancel_batch_prediction_job:
 - ''
@@ -10,11 +22,19 @@ cancel_data_labeling_job:
 - ''
 cancel_hyperparameter_tuning_job:
 - ''
+cancel_pipeline_job:
+- ''
 cancel_training_pipeline:
+- ''
+check_trial_early_stopping_state:
+- ''
+complete_trial:
 - ''
 create_annotation:
 - ''
 create_annotation_spec:
+- ''
+create_artifact:
 - ''
 create_batch_prediction_job:
 - ''
@@ -29,6 +49,8 @@ create_batch_prediction_job:
 - video_action_recognition
 - video_classification
 - video_object_tracking
+create_context:
+- ''
 create_custom_job:
 - ''
 - python_package
@@ -48,10 +70,40 @@ create_dataset:
 - video
 create_endpoint:
 - ''
+create_entity_type:
+- ''
+create_execution:
+- ''
+create_feature:
+- ''
+create_featurestore:
+- ''
 create_hyperparameter_tuning_job:
 - ''
 - python_package
+create_index:
+- ''
+create_index_endpoint:
+- ''
+create_metadata_schema:
+- ''
+create_metadata_store:
+- ''
+create_model_deployment_monitoring_job:
+- ''
+create_pipeline_job:
+- ''
 create_specialist_pool:
+- ''
+create_study:
+- ''
+create_tensorboard:
+- ''
+create_tensorboard_experiment:
+- ''
+create_tensorboard_run:
+- ''
+create_tensorboard_time_series:
 - ''
 create_training_pipeline:
 - ''
@@ -68,11 +120,15 @@ create_training_pipeline:
 - video_action_recognition
 - video_classification
 - video_object_tracking
+create_trial:
+- ''
 delete_annotation:
 - ''
 delete_annotation_spec:
 - ''
 delete_batch_prediction_job:
+- ''
+delete_context:
 - ''
 delete_custom_job:
 - ''
@@ -84,13 +140,43 @@ delete_dataset:
 - ''
 delete_endpoint:
 - ''
+delete_entity_type:
+- ''
+delete_feature:
+- ''
+delete_featurestore:
+- ''
 delete_hyperparameter_tuning_job:
+- ''
+delete_index:
+- ''
+delete_index_endpoint:
+- ''
+delete_metadata_store:
 - ''
 delete_model:
 - ''
+delete_model_deployment_monitoring_job:
+- ''
+delete_pipeline_job:
+- ''
 delete_specialist_pool:
 - ''
+delete_study:
+- ''
+delete_tensorboard:
+- ''
+delete_tensorboard_experiment:
+- ''
+delete_tensorboard_run:
+- ''
+delete_tensorboard_time_series:
+- ''
 delete_training_pipeline:
+- ''
+delete_trial:
+- ''
+deploy_index:
 - ''
 deploy_model:
 - ''
@@ -104,15 +190,23 @@ export_data:
 - ''
 export_evaluated_data_items:
 - ''
+export_feature_values:
+- ''
 export_model:
 - ''
 - tabular_classification
 - video_action_recognition
+export_tensorboard_time_series_data:
+- ''
 get_annotation:
 - ''
 get_annotation_spec:
 - ''
+get_artifact:
+- ''
 get_batch_prediction_job:
+- ''
+get_context:
 - ''
 get_custom_job:
 - ''
@@ -124,9 +218,27 @@ get_dataset:
 - ''
 get_endpoint:
 - ''
+get_entity_type:
+- ''
+get_execution:
+- ''
+get_feature:
+- ''
+get_featurestore:
+- ''
 get_hyperparameter_tuning_job:
 - ''
+get_index:
+- ''
+get_index_endpoint:
+- ''
+get_metadata_schema:
+- ''
+get_metadata_store:
+- ''
 get_model:
+- ''
+get_model_deployment_monitoring_job:
 - ''
 get_model_evaluation:
 - ''
@@ -142,9 +254,23 @@ get_model_evaluation:
 - video_object_tracking
 get_model_evaluation_slice:
 - ''
+get_pipeline_job:
+- ''
 get_specialist_pool:
 - ''
+get_study:
+- ''
+get_tensorboard:
+- ''
+get_tensorboard_experiment:
+- ''
+get_tensorboard_run:
+- ''
+get_tensorboard_time_series:
+- ''
 get_training_pipeline:
+- ''
+get_trial:
 - ''
 import_data:
 - ''
@@ -156,11 +282,17 @@ import_data:
 - video_action_recognition
 - video_classification
 - video_object_tracking
+import_feature_values:
+- ''
 list_annotation_specs:
 - ''
 list_annotations:
 - ''
+list_artifacts:
+- ''
 list_batch_prediction_jobs:
+- ''
+list_contexts:
 - ''
 list_custom_jobs:
 - ''
@@ -172,7 +304,25 @@ list_datasets:
 - ''
 list_endpoints:
 - ''
+list_entity_types:
+- ''
+list_executions:
+- ''
+list_features:
+- ''
+list_featurestores:
+- ''
 list_hyperparameter_tuning_jobs:
+- ''
+list_index_endpoints:
+- ''
+list_indexes:
+- ''
+list_metadata_schemas:
+- ''
+list_metadata_stores:
+- ''
+list_model_deployment_monitoring_jobs:
 - ''
 list_model_evaluation_slices:
 - ''
@@ -180,9 +330,29 @@ list_model_evaluations:
 - ''
 list_models:
 - ''
+list_optimal_trials:
+- ''
+list_pipeline_jobs:
+- ''
 list_specialist_pools:
 - ''
+list_studies:
+- ''
+list_tensorboard_experiments:
+- ''
+list_tensorboard_runs:
+- ''
+list_tensorboard_time_series:
+- ''
+list_tensorboards:
+- ''
 list_training_pipelines:
+- ''
+list_trials:
+- ''
+lookup_study:
+- ''
+pause_model_deployment_monitoring_job:
 - ''
 predict:
 - ''
@@ -195,19 +365,71 @@ predict:
 - text_classification_single_label
 - text_entity_extraction
 - text_sentiment_analysis
+query_artifact_lineage_subgraph:
+- ''
+query_context_lineage_subgraph:
+- ''
+query_execution_inputs_and_outputs:
+- ''
+read_feature_values:
+- ''
+read_tensorboard_blob_data:
+- ''
+read_tensorboard_time_series_data:
+- ''
+resume_model_deployment_monitoring_job:
+- ''
+search_features:
+- ''
 search_migratable_resources:
+- ''
+search_model_deployment_monitoring_stats_anomalies:
+- ''
+stop_trial:
+- ''
+streaming_read_feature_values:
+- ''
+suggest_trials:
+- ''
+undeploy_index:
 - ''
 undeploy_model:
 - ''
 update_annotation_spec:
 - ''
+update_artifact:
+- ''
+update_context:
+- ''
 update_dataset:
 - ''
 update_endpoint:
 - ''
+update_entity_type:
+- ''
+update_execution:
+- ''
+update_feature:
+- ''
+update_featurestore:
+- ''
+update_index:
+- ''
+update_index_endpoint:
+- ''
 update_model:
 - ''
+update_model_deployment_monitoring_job:
+- ''
 update_specialist_pool:
+- ''
+update_tensorboard:
+- ''
+update_tensorboard_experiment:
+- ''
+update_tensorboard_run:
+- ''
+update_tensorboard_time_series:
 - ''
 upload_model:
 - ''
@@ -215,3 +437,5 @@ upload_model:
 - explain_image_managed_container
 - explain_tabular_managed_container
 - managed_container
+write_tensorboard_run_data:
+- ''

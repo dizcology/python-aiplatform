@@ -1,4 +1,4 @@
-# Copyright 2020 Google LLC
+# Copyright 2021 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,10 +12,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# [START aiplatform_predict_image_object_detection_sample]
+# [START aiplatform_v1beta1_predict_image_object_detection_sample]
 import base64
 
-from google.cloud import aiplatform
+from google.cloud import aiplatform_v1beta1
 from google.cloud.aiplatform.gapic.schema import predict
 
 
@@ -30,7 +30,7 @@ def predict_image_object_detection_sample(
     client_options = {"api_endpoint": api_endpoint}
     # Initialize client that will be used to create and send requests.
     # This client only needs to be created once, and can be reused for multiple requests.
-    client = aiplatform.gapic.PredictionServiceClient(client_options=client_options)
+    client = aiplatform_v1beta1.PredictionServiceClient(client_options=client_options)
     with open(filename, "rb") as f:
         file_content = f.read()
 
@@ -58,4 +58,4 @@ def predict_image_object_detection_sample(
         print(" prediction:", dict(prediction))
 
 
-# [END aiplatform_predict_image_object_detection_sample]
+# [END aiplatform_v1beta1_predict_image_object_detection_sample]

@@ -1,4 +1,4 @@
-# Copyright 2020 Google LLC
+# Copyright 2021 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,8 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# [START aiplatform_import_data_video_classification_sample]
-from google.cloud import aiplatform
+# [START aiplatform_v1beta1_import_data_video_classification_sample]
+from google.cloud import aiplatform_v1beta1
 
 
 def import_data_video_classification_sample(
@@ -28,7 +28,7 @@ def import_data_video_classification_sample(
     client_options = {"api_endpoint": api_endpoint}
     # Initialize client that will be used to create and send requests.
     # This client only needs to be created once, and can be reused for multiple requests.
-    client = aiplatform.gapic.DatasetServiceClient(client_options=client_options)
+    client = aiplatform_v1beta1.DatasetServiceClient(client_options=client_options)
     import_configs = [
         {
             "gcs_source": {"uris": [gcs_source_uri]},
@@ -42,4 +42,4 @@ def import_data_video_classification_sample(
     print("import_data_response:", import_data_response)
 
 
-# [END aiplatform_import_data_video_classification_sample]
+# [END aiplatform_v1beta1_import_data_video_classification_sample]

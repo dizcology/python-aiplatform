@@ -1,4 +1,4 @@
-# Copyright 2020 Google LLC
+# Copyright 2021 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,8 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# [START aiplatform_create_training_pipeline_image_object_detection_sample]
-from google.cloud import aiplatform
+# [START aiplatform_v1beta1_create_training_pipeline_image_object_detection_sample]
+from google.cloud import aiplatform_v1beta1
 from google.cloud.aiplatform.gapic.schema import trainingjob
 
 
@@ -29,7 +29,7 @@ def create_training_pipeline_image_object_detection_sample(
     client_options = {"api_endpoint": api_endpoint}
     # Initialize client that will be used to create and send requests.
     # This client only needs to be created once, and can be reused for multiple requests.
-    client = aiplatform.gapic.PipelineServiceClient(client_options=client_options)
+    client = aiplatform_v1beta1.PipelineServiceClient(client_options=client_options)
     training_task_inputs = trainingjob.definition.AutoMlImageObjectDetectionInputs(
         model_type="CLOUD_HIGH_ACCURACY_1",
         budget_milli_node_hours=20000,
@@ -50,4 +50,4 @@ def create_training_pipeline_image_object_detection_sample(
     print("response:", response)
 
 
-# [END aiplatform_create_training_pipeline_image_object_detection_sample]
+# [END aiplatform_v1beta1_create_training_pipeline_image_object_detection_sample]
