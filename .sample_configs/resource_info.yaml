@@ -16,6 +16,10 @@
 mapping:
   evaluation: model_evaluation
   slice: model_evaluation_slice
+  run: tensorboard_run
+  experiment: tensorboard_experiment
+  time_series: tensorboard_time_series
+
 resources:
 - projects/{project}/locations/{location}/datasets/{dataset}/annotationSpecs/{annotation_spec}
 - projects/{project}/locations/{location}/datasets/{dataset}
@@ -31,3 +35,23 @@ resources:
 - projects/{project}/locations/{location}/hyperparameterTuningJobs/{hyperparameter_tuning_job}
 - projects/{project}/locations/{location}/batchPredictionJobs/{batch_prediction_job}
 - projects/{project}/locations/{location}/datasets/{dataset}/dataItems/{data_item}
+- projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}
+- projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}
+- projects/{project}/locations/{location}/featurestores/{featurestore}
+- projects/{project}/locations/{location}/indexes/{index}
+- projects/{project}/locations/{location}/indexEndpoints/{index_endpoint}
+- projects/{project}/locations/{location}/metadataStores/{metadata_store}/artifacts/{artifact}
+- projects/{project}/locations/{location}/metadataStores/{metadata_store}/contexts/{context}
+- projects/{project}/locations/{location}/metadataStores/{metadata_store}/executions/{execution}
+- projects/{project}/locations/{location}/metadataStores/{metadata_store}/metadataSchemas/{metadata_schema}
+- projects/{project}/locations/{location}/metadataStores/{metadata_store}
+- projects/{project}/global/networks/{network}
+- projects/{project}/locations/{location}/pipelineJobs/{pipeline_job}
+- projects/{project}/locations/{location}/tensorboards/{tensorboard}
+- projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}
+- projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}
+- projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}/timeSeries/{time_series}
+- projects/{project}/locations/{location}/studies/{study}
+- projects/{project}/locations/{location}/studies/{study}/trials/{trial}
+- projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}
+

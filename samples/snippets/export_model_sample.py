@@ -1,4 +1,4 @@
-# Copyright 2020 Google LLC
+# Copyright 2021 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,8 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# [START aiplatform_export_model_sample]
-from google.cloud import aiplatform
+# [START aiplatform_v1beta1_export_model_sample]
+from google.cloud import aiplatform_v1beta1
 
 
 def export_model_sample(
@@ -28,7 +28,7 @@ def export_model_sample(
     client_options = {"api_endpoint": api_endpoint}
     # Initialize client that will be used to create and send requests.
     # This client only needs to be created once, and can be reused for multiple requests.
-    client = aiplatform.gapic.ModelServiceClient(client_options=client_options)
+    client = aiplatform_v1beta1.ModelServiceClient(client_options=client_options)
     output_config = {
         "artifact_destination": {
             "output_uri_prefix": gcs_destination_output_uri_prefix
@@ -44,4 +44,4 @@ def export_model_sample(
     print("export_model_response:", export_model_response)
 
 
-# [END aiplatform_export_model_sample]
+# [END aiplatform_v1beta1_export_model_sample]

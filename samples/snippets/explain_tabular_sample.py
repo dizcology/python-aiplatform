@@ -1,4 +1,4 @@
-# Copyright 2020 Google LLC
+# Copyright 2021 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# [START aiplatform_explain_tabular_sample]
+# [START aiplatform_v1beta1_explain_tabular_sample]
 from typing import Dict
 
 from google.cloud import aiplatform_v1beta1
@@ -66,4 +66,4 @@ def explain_tabular_sample(
         print(" prediction:", dict(prediction))
 
 
-# [END aiplatform_explain_tabular_sample]
+# [END aiplatform_v1beta1_explain_tabular_sample]

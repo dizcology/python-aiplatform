@@ -1,4 +1,4 @@
-# Copyright 2020 Google LLC
+# Copyright 2021 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# [START aiplatform_create_batch_prediction_job_tabular_forecasting_sample]
+# [START aiplatform_v1beta1_create_batch_prediction_job_tabular_forecasting_sample]
 from google.cloud import aiplatform_v1beta1
 
 
@@ -51,4 +51,4 @@ def create_batch_prediction_job_tabular_forecasting_sample(
     print("response:", response)
 
 
-# [END aiplatform_create_batch_prediction_job_tabular_forecasting_sample]
+# [END aiplatform_v1beta1_create_batch_prediction_job_tabular_forecasting_sample]

@@ -1,4 +1,4 @@
-# Copyright 2020 Google LLC
+# Copyright 2021 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# [START aiplatform_export_model_tabular_classification_sample]
+# [START aiplatform_v1beta1_export_model_tabular_classification_sample]
 from google.cloud import aiplatform_v1beta1
 
 
@@ -42,4 +42,4 @@ def export_model_tabular_classification_sample(
     print("export_model_response:", export_model_response)
 
 
-# [END aiplatform_export_model_tabular_classification_sample]
+# [END aiplatform_v1beta1_export_model_tabular_classification_sample]
