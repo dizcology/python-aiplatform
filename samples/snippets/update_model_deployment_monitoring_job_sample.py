@@ -19,7 +19,7 @@ from google.cloud import aiplatform_v1beta1
 def update_model_deployment_monitoring_job_sample(
     project: str,
     model_deployment_monitoring_job_id: str,
-    update_mask: google.protobuf.field_mask_pb2.FieldMask,
+    display_name: str,
     location: str = "us-central1",
     api_endpoint: str = "us-central1-aiplatform.googleapis.com",
     timeout: int = 300,
@@ -29,7 +29,9 @@ def update_model_deployment_monitoring_job_sample(
     # Initialize client that will be used to create and send requests.
     # This client only needs to be created once, and can be reused for multiple requests.
     client = aiplatform_v1beta1.JobServiceClient(client_options=client_options)
-    model_deployment_monitoring_job = client.model_deployment_monitoring_job_path(
+    model_deployment_monitoring_job = {"name": name, "display_name": display_name}
+    update_mask = {"paths": ["display_name"]}
+    name = client.model_deployment_monitoring_job_path(
         project=project,
         location=location,
         model_deployment_monitoring_job=model_deployment_monitoring_job_id,

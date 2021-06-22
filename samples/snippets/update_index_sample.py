@@ -19,7 +19,7 @@ from google.cloud import aiplatform_v1beta1
 def update_index_sample(
     project: str,
     index_id: str,
-    update_mask: google.protobuf.field_mask_pb2.FieldMask,
+    display_name: str,
     location: str = "us-central1",
     api_endpoint: str = "us-central1-aiplatform.googleapis.com",
     timeout: int = 300,
@@ -29,7 +29,9 @@ def update_index_sample(
     # Initialize client that will be used to create and send requests.
     # This client only needs to be created once, and can be reused for multiple requests.
     client = aiplatform_v1beta1.IndexServiceClient(client_options=client_options)
-    index = client.index_path(project=project, location=location, index=index_id)
+    index = {"name": name, "display_name": display_name}
+    update_mask = {"paths": ["display_name"]}
+    name = client.index_path(project=project, location=location, index=index_id)
     response = client.update_index(index=index, update_mask=update_mask)
     print("Long running operation:", response.operation.name)
     update_index_response = response.result(timeout=timeout)

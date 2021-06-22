@@ -18,7 +18,7 @@ from google.cloud import aiplatform_v1beta1
 
 def create_index_endpoint_sample(
     project: str,
-    index_endpoint: google.cloud.aiplatform_v1beta1.types.index_endpoint.IndexEndpoint,
+    display_name: str,
     location: str = "us-central1",
     api_endpoint: str = "us-central1-aiplatform.googleapis.com",
     timeout: int = 300,
@@ -30,6 +30,7 @@ def create_index_endpoint_sample(
     client = aiplatform_v1beta1.IndexEndpointServiceClient(
         client_options=client_options
     )
+    index_endpoint = {"display_name": display_name}
     parent = f"projects/{project}/locations/{location}"
     response = client.create_index_endpoint(
         parent=parent, index_endpoint=index_endpoint

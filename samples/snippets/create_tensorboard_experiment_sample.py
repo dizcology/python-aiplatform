@@ -19,7 +19,7 @@ from google.cloud import aiplatform_v1beta1
 def create_tensorboard_experiment_sample(
     project: str,
     tensorboard_id: str,
-    tensorboard_experiment: google.cloud.aiplatform_v1beta1.types.tensorboard_experiment.TensorboardExperiment,
+    display_name: str,
     tensorboard_experiment_id: str,
     location: str = "us-central1",
     api_endpoint: str = "us-central1-aiplatform.googleapis.com",
@@ -29,6 +29,7 @@ def create_tensorboard_experiment_sample(
     # Initialize client that will be used to create and send requests.
     # This client only needs to be created once, and can be reused for multiple requests.
     client = aiplatform_v1beta1.TensorboardServiceClient(client_options=client_options)
+    tensorboard_experiment = {"display_name": display_name}
     parent = client.tensorboard_path(
         project=project, location=location, tensorboard=tensorboard_id
     )

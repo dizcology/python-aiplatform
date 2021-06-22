@@ -18,7 +18,7 @@ from google.cloud import aiplatform_v1beta1
 
 def create_model_deployment_monitoring_job_sample(
     project: str,
-    model_deployment_monitoring_job: google.cloud.aiplatform_v1beta1.types.model_deployment_monitoring_job.ModelDeploymentMonitoringJob,
+    display_name: str,
     location: str = "us-central1",
     api_endpoint: str = "us-central1-aiplatform.googleapis.com",
 ):
@@ -27,6 +27,7 @@ def create_model_deployment_monitoring_job_sample(
     # Initialize client that will be used to create and send requests.
     # This client only needs to be created once, and can be reused for multiple requests.
     client = aiplatform_v1beta1.JobServiceClient(client_options=client_options)
+    model_deployment_monitoring_job = {"display_name": display_name}
     parent = f"projects/{project}/locations/{location}"
     response = client.create_model_deployment_monitoring_job(
         parent=parent, model_deployment_monitoring_job=model_deployment_monitoring_job

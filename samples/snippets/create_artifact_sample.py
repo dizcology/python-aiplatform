@@ -19,7 +19,7 @@ from google.cloud import aiplatform_v1beta1
 def create_artifact_sample(
     project: str,
     metadata_store_id: str,
-    artifact: google.cloud.aiplatform_v1beta1.types.artifact.Artifact,
+    display_name: str,
     artifact_id: str,
     location: str = "us-central1",
     api_endpoint: str = "us-central1-aiplatform.googleapis.com",
@@ -29,6 +29,7 @@ def create_artifact_sample(
     # Initialize client that will be used to create and send requests.
     # This client only needs to be created once, and can be reused for multiple requests.
     client = aiplatform_v1beta1.MetadataServiceClient(client_options=client_options)
+    artifact = {"display_name": display_name}
     parent = client.metadata_store_path(
         project=project, location=location, metadata_store=metadata_store_id
     )

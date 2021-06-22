@@ -19,7 +19,7 @@ from google.cloud import aiplatform_v1beta1
 def create_entity_type_sample(
     project: str,
     featurestore_id: str,
-    entity_type: google.cloud.aiplatform_v1beta1.types.entity_type.EntityType,
+    description: str,
     location: str = "us-central1",
     api_endpoint: str = "us-central1-aiplatform.googleapis.com",
     timeout: int = 300,
@@ -29,6 +29,7 @@ def create_entity_type_sample(
     # Initialize client that will be used to create and send requests.
     # This client only needs to be created once, and can be reused for multiple requests.
     client = aiplatform_v1beta1.FeaturestoreServiceClient(client_options=client_options)
+    entity_type = {"description": description}
     parent = client.featurestore_path(
         project=project, location=location, featurestore=featurestore_id
     )

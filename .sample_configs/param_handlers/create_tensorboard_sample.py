@@ -3,8 +3,8 @@ def make_parent(parent: str) -> str:
 
     return parent
 
-def make_tensorboard(tensorboard: google.cloud.aiplatform_v1beta1.types.tensorboard.Tensorboard) -> google.cloud.aiplatform_v1beta1.types.tensorboard.Tensorboard:
-    tensorboard = tensorboard
+def make_tensorboard(display_name: str) -> google.cloud.aiplatform_v1beta1.types.tensorboard.Tensorboard:
+    tensorboard = {'display_name': display_name}
 
     return tensorboard
 

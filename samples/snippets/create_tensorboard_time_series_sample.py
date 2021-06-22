@@ -21,7 +21,7 @@ def create_tensorboard_time_series_sample(
     tensorboard_id: str,
     experiment_id: str,
     run_id: str,
-    tensorboard_time_series: google.cloud.aiplatform_v1beta1.types.tensorboard_time_series.TensorboardTimeSeries,
+    display_name: str,
     location: str = "us-central1",
     api_endpoint: str = "us-central1-aiplatform.googleapis.com",
 ):
@@ -30,6 +30,7 @@ def create_tensorboard_time_series_sample(
     # Initialize client that will be used to create and send requests.
     # This client only needs to be created once, and can be reused for multiple requests.
     client = aiplatform_v1beta1.TensorboardServiceClient(client_options=client_options)
+    tensorboard_time_series = {"display_name": display_name}
     parent = client.tensorboard_run_path(
         project=project,
         location=location,

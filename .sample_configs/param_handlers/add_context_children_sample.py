@@ -3,8 +3,8 @@ def make_context(context: str) -> str:
 
     return context
 
-def make_child_contexts(child_contexts: typing.Sequence[str]) -> typing.Sequence[str]:
-    child_contexts = child_contexts
+def make_child_contexts(child_context: str) -> typing.Sequence[str]:
+    child_contexts = [child_context]
 
     return child_contexts
 

@@ -18,7 +18,7 @@ from google.cloud import aiplatform_v1beta1
 
 def create_tensorboard_sample(
     project: str,
-    tensorboard: google.cloud.aiplatform_v1beta1.types.tensorboard.Tensorboard,
+    display_name: str,
     location: str = "us-central1",
     api_endpoint: str = "us-central1-aiplatform.googleapis.com",
     timeout: int = 300,
@@ -28,6 +28,7 @@ def create_tensorboard_sample(
     # Initialize client that will be used to create and send requests.
     # This client only needs to be created once, and can be reused for multiple requests.
     client = aiplatform_v1beta1.TensorboardServiceClient(client_options=client_options)
+    tensorboard = {"display_name": display_name}
     parent = f"projects/{project}/locations/{location}"
     response = client.create_tensorboard(parent=parent, tensorboard=tensorboard)
     print("Long running operation:", response.operation.name)

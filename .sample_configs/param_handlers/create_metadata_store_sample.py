@@ -3,8 +3,8 @@ def make_parent(parent: str) -> str:
 
     return parent
 
-def make_metadata_store(metadata_store: google.cloud.aiplatform_v1beta1.types.metadata_store.MetadataStore) -> google.cloud.aiplatform_v1beta1.types.metadata_store.MetadataStore:
-    metadata_store = metadata_store
+def make_metadata_store(description: str) -> google.cloud.aiplatform_v1beta1.types.metadata_store.MetadataStore:
+    metadata_store = {'description': description}
 
     return metadata_store
 

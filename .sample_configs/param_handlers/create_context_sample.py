@@ -3,8 +3,8 @@ def make_parent(parent: str) -> str:
 
     return parent
 
-def make_context(context: google.cloud.aiplatform_v1beta1.types.context.Context) -> google.cloud.aiplatform_v1beta1.types.context.Context:
-    context = context
+def make_context(display_name: str) -> google.cloud.aiplatform_v1beta1.types.context.Context:
+    context = {'display_name': display_name}
 
     return context
 

@@ -3,8 +3,8 @@ def make_parent(parent: str) -> str:
 
     return parent
 
-def make_pipeline_job(pipeline_job: google.cloud.aiplatform_v1beta1.types.pipeline_job.PipelineJob) -> google.cloud.aiplatform_v1beta1.types.pipeline_job.PipelineJob:
-    pipeline_job = pipeline_job
+def make_pipeline_job(display_name: str) -> google.cloud.aiplatform_v1beta1.types.pipeline_job.PipelineJob:
+    pipeline_job = {'display_name': display_name}
 
     return pipeline_job
 

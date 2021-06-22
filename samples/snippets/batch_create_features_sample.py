@@ -20,9 +20,10 @@ def batch_create_features_sample(
     project: str,
     featurestore_id: str,
     entity_type_id: str,
-    requests: typing.Sequence[
-        google.cloud.aiplatform_v1beta1.types.featurestore_service.CreateFeatureRequest
-    ],
+    project: str,
+    featurestore_id: str,
+    entity_type_id: str,
+    description: str,
     location: str = "us-central1",
     api_endpoint: str = "us-central1-aiplatform.googleapis.com",
     timeout: int = 300,
@@ -32,6 +33,7 @@ def batch_create_features_sample(
     # Initialize client that will be used to create and send requests.
     # This client only needs to be created once, and can be reused for multiple requests.
     client = aiplatform_v1beta1.FeaturestoreServiceClient(client_options=client_options)
+    requests = {"parent": parent, "feature": {"description": description}}
     parent = client.entity_type_path(
         project=project,
         location=location,

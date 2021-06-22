@@ -18,7 +18,6 @@ from google.cloud import aiplatform_v1beta1
 
 def create_featurestore_sample(
     project: str,
-    featurestore: google.cloud.aiplatform_v1beta1.types.featurestore.Featurestore,
     location: str = "us-central1",
     api_endpoint: str = "us-central1-aiplatform.googleapis.com",
     timeout: int = 300,
@@ -28,6 +27,7 @@ def create_featurestore_sample(
     # Initialize client that will be used to create and send requests.
     # This client only needs to be created once, and can be reused for multiple requests.
     client = aiplatform_v1beta1.FeaturestoreServiceClient(client_options=client_options)
+    featurestore = {}
     parent = f"projects/{project}/locations/{location}"
     response = client.create_featurestore(parent=parent, featurestore=featurestore)
     print("Long running operation:", response.operation.name)

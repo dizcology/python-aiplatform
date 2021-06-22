@@ -18,8 +18,11 @@ from google.cloud import aiplatform_v1beta1
 
 def add_context_artifacts_and_executions_sample(
     context: str,
-    artifacts: typing.Sequence[str],
-    executions: typing.Sequence[str],
+    artifact: str,
+    project: str,
+    metadata_store_id: str,
+    execution_id: str,
+    location: str = "us-central1",
     api_endpoint: str = "us-central1-aiplatform.googleapis.com",
 ):
     # The AI Platform services require regional API endpoints.
@@ -27,6 +30,14 @@ def add_context_artifacts_and_executions_sample(
     # Initialize client that will be used to create and send requests.
     # This client only needs to be created once, and can be reused for multiple requests.
     client = aiplatform_v1beta1.MetadataServiceClient(client_options=client_options)
+    artifacts = [artifact]
+    executions = [execution]
+    execution = client.execution_path(
+        project=project,
+        location=location,
+        metadata_store=metadata_store_id,
+        execution=execution_id,
+    )
     response = client.add_context_artifacts_and_executions(
         context=context, artifacts=artifacts, executions=executions
     )

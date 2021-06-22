@@ -3,8 +3,8 @@ def make_parent(parent: str) -> str:
 
     return parent
 
-def make_tensorboard_run(tensorboard_run: google.cloud.aiplatform_v1beta1.types.tensorboard_run.TensorboardRun) -> google.cloud.aiplatform_v1beta1.types.tensorboard_run.TensorboardRun:
-    tensorboard_run = tensorboard_run
+def make_tensorboard_run(display_name: str) -> google.cloud.aiplatform_v1beta1.types.tensorboard_run.TensorboardRun:
+    tensorboard_run = {'display_name': display_name}
 
     return tensorboard_run
 

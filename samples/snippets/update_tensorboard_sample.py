@@ -19,7 +19,7 @@ from google.cloud import aiplatform_v1beta1
 def update_tensorboard_sample(
     project: str,
     tensorboard_id: str,
-    update_mask: google.protobuf.field_mask_pb2.FieldMask,
+    display_name: str,
     location: str = "us-central1",
     api_endpoint: str = "us-central1-aiplatform.googleapis.com",
     timeout: int = 300,
@@ -29,7 +29,9 @@ def update_tensorboard_sample(
     # Initialize client that will be used to create and send requests.
     # This client only needs to be created once, and can be reused for multiple requests.
     client = aiplatform_v1beta1.TensorboardServiceClient(client_options=client_options)
-    tensorboard = client.tensorboard_path(
+    tensorboard = {"name": name, "display_name": display_name}
+    update_mask = {"paths": ["display_name"]}
+    name = client.tensorboard_path(
         project=project, location=location, tensorboard=tensorboard_id
     )
     response = client.update_tensorboard(

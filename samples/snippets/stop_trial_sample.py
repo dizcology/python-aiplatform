@@ -17,7 +17,10 @@ from google.cloud import aiplatform_v1beta1
 
 
 def stop_trial_sample(
-    request: google.cloud.aiplatform_v1beta1.types.vizier_service.StopTrialRequest,
+    project: str,
+    study_id: str,
+    trial_id: str,
+    location: str = "us-central1",
     api_endpoint: str = "us-central1-aiplatform.googleapis.com",
 ):
     # The AI Platform services require regional API endpoints.
@@ -25,6 +28,10 @@ def stop_trial_sample(
     # Initialize client that will be used to create and send requests.
     # This client only needs to be created once, and can be reused for multiple requests.
     client = aiplatform_v1beta1.VizierServiceClient(client_options=client_options)
+    request = {"name": name}
+    name = client.trial_path(
+        project=project, location=location, study=study_id, trial=trial_id
+    )
     response = client.stop_trial(request=request)
     print("response:", response)
 

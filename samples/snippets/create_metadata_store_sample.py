@@ -18,7 +18,7 @@ from google.cloud import aiplatform_v1beta1
 
 def create_metadata_store_sample(
     project: str,
-    metadata_store: google.cloud.aiplatform_v1beta1.types.metadata_store.MetadataStore,
+    description: str,
     metadata_store_id: str,
     location: str = "us-central1",
     api_endpoint: str = "us-central1-aiplatform.googleapis.com",
@@ -29,6 +29,7 @@ def create_metadata_store_sample(
     # Initialize client that will be used to create and send requests.
     # This client only needs to be created once, and can be reused for multiple requests.
     client = aiplatform_v1beta1.MetadataServiceClient(client_options=client_options)
+    metadata_store = {"description": description}
     parent = f"projects/{project}/locations/{location}"
     response = client.create_metadata_store(
         parent=parent,

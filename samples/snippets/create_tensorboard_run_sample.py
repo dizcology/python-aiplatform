@@ -20,7 +20,7 @@ def create_tensorboard_run_sample(
     project: str,
     tensorboard_id: str,
     experiment_id: str,
-    tensorboard_run: google.cloud.aiplatform_v1beta1.types.tensorboard_run.TensorboardRun,
+    display_name: str,
     tensorboard_run_id: str,
     location: str = "us-central1",
     api_endpoint: str = "us-central1-aiplatform.googleapis.com",
@@ -30,6 +30,7 @@ def create_tensorboard_run_sample(
     # Initialize client that will be used to create and send requests.
     # This client only needs to be created once, and can be reused for multiple requests.
     client = aiplatform_v1beta1.TensorboardServiceClient(client_options=client_options)
+    tensorboard_run = {"display_name": display_name}
     parent = client.tensorboard_experiment_path(
         project=project,
         location=location,

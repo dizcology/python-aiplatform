@@ -3,8 +3,8 @@ def make_parent(parent: str) -> str:
 
     return parent
 
-def make_execution(execution: google.cloud.aiplatform_v1beta1.types.execution.Execution) -> google.cloud.aiplatform_v1beta1.types.execution.Execution:
-    execution = execution
+def make_execution(display_name: str) -> google.cloud.aiplatform_v1beta1.types.execution.Execution:
+    execution = {'display_name': display_name}
 
     return execution
 

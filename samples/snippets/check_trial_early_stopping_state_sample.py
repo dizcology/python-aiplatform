@@ -17,7 +17,7 @@ from google.cloud import aiplatform_v1beta1
 
 
 def check_trial_early_stopping_state_sample(
-    request: google.cloud.aiplatform_v1beta1.types.vizier_service.CheckTrialEarlyStoppingStateRequest,
+    trial_name: str,
     api_endpoint: str = "us-central1-aiplatform.googleapis.com",
     timeout: int = 300,
 ):
@@ -26,6 +26,7 @@ def check_trial_early_stopping_state_sample(
     # Initialize client that will be used to create and send requests.
     # This client only needs to be created once, and can be reused for multiple requests.
     client = aiplatform_v1beta1.VizierServiceClient(client_options=client_options)
+    request = {"trial_name": trial_name}
     response = client.check_trial_early_stopping_state(request=request)
     print("Long running operation:", response.operation.name)
     check_trial_early_stopping_state_response = response.result(timeout=timeout)

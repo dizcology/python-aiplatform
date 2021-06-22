@@ -3,13 +3,13 @@ def make_context(context: str) -> str:
 
     return context
 
-def make_artifacts(artifacts: typing.Sequence[str]) -> typing.Sequence[str]:
-    artifacts = artifacts
+def make_artifacts(artifact: str) -> typing.Sequence[str]:
+    artifacts = [artifact]
 
     return artifacts
 
-def make_executions(executions: typing.Sequence[str]) -> typing.Sequence[str]:
-    executions = executions
+def make_executions(execution: str) -> typing.Sequence[str]:
+    executions = [execution]
 
     return executions
 

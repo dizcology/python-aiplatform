@@ -18,7 +18,7 @@ from google.cloud import aiplatform_v1beta1
 
 def create_index_sample(
     project: str,
-    index: google.cloud.aiplatform_v1beta1.types.index.Index,
+    display_name: str,
     location: str = "us-central1",
     api_endpoint: str = "us-central1-aiplatform.googleapis.com",
     timeout: int = 300,
@@ -28,6 +28,7 @@ def create_index_sample(
     # Initialize client that will be used to create and send requests.
     # This client only needs to be created once, and can be reused for multiple requests.
     client = aiplatform_v1beta1.IndexServiceClient(client_options=client_options)
+    index = {"display_name": display_name}
     parent = f"projects/{project}/locations/{location}"
     response = client.create_index(parent=parent, index=index)
     print("Long running operation:", response.operation.name)

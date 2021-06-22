@@ -3,8 +3,8 @@ def make_parent(parent: str) -> str:
 
     return parent
 
-def make_feature(feature: google.cloud.aiplatform_v1beta1.types.feature.Feature) -> google.cloud.aiplatform_v1beta1.types.feature.Feature:
-    feature = feature
+def make_feature(description: str) -> google.cloud.aiplatform_v1beta1.types.feature.Feature:
+    feature = {'description': description}
 
     return feature
 

@@ -18,7 +18,7 @@ from google.cloud import aiplatform_v1beta1
 
 def add_execution_events_sample(
     execution: str,
-    events: typing.Sequence[google.cloud.aiplatform_v1beta1.types.event.Event],
+    artifact: str,
     api_endpoint: str = "us-central1-aiplatform.googleapis.com",
 ):
     # The AI Platform services require regional API endpoints.
@@ -26,6 +26,7 @@ def add_execution_events_sample(
     # Initialize client that will be used to create and send requests.
     # This client only needs to be created once, and can be reused for multiple requests.
     client = aiplatform_v1beta1.MetadataServiceClient(client_options=client_options)
+    events = [{"artifact": artifact}]
     response = client.add_execution_events(execution=execution, events=events)
     print("response:", response)
 

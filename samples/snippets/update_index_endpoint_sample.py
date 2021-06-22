@@ -19,7 +19,7 @@ from google.cloud import aiplatform_v1beta1
 def update_index_endpoint_sample(
     project: str,
     index_endpoint_id: str,
-    update_mask: google.protobuf.field_mask_pb2.FieldMask,
+    display_name: str,
     location: str = "us-central1",
     api_endpoint: str = "us-central1-aiplatform.googleapis.com",
 ):
@@ -30,7 +30,9 @@ def update_index_endpoint_sample(
     client = aiplatform_v1beta1.IndexEndpointServiceClient(
         client_options=client_options
     )
-    index_endpoint = client.index_endpoint_path(
+    index_endpoint = {"name": name, "display_name": display_name}
+    update_mask = {"paths": ["display_name"]}
+    name = client.index_endpoint_path(
         project=project, location=location, index_endpoint=index_endpoint_id
     )
     response = client.update_index_endpoint(

@@ -3,8 +3,8 @@ def make_parent(parent: str) -> str:
 
     return parent
 
-def make_artifact(artifact: google.cloud.aiplatform_v1beta1.types.artifact.Artifact) -> google.cloud.aiplatform_v1beta1.types.artifact.Artifact:
-    artifact = artifact
+def make_artifact(display_name: str) -> google.cloud.aiplatform_v1beta1.types.artifact.Artifact:
+    artifact = {'display_name': display_name}
 
     return artifact
 

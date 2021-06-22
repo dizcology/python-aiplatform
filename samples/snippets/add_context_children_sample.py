@@ -18,7 +18,7 @@ from google.cloud import aiplatform_v1beta1
 
 def add_context_children_sample(
     context: str,
-    child_contexts: typing.Sequence[str],
+    child_context: str,
     api_endpoint: str = "us-central1-aiplatform.googleapis.com",
 ):
     # The AI Platform services require regional API endpoints.
@@ -26,6 +26,7 @@ def add_context_children_sample(
     # Initialize client that will be used to create and send requests.
     # This client only needs to be created once, and can be reused for multiple requests.
     client = aiplatform_v1beta1.MetadataServiceClient(client_options=client_options)
+    child_contexts = [child_context]
     response = client.add_context_children(
         context=context, child_contexts=child_contexts
     )

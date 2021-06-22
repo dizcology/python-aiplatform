@@ -3,8 +3,8 @@ def make_execution(execution: str) -> str:
 
     return execution
 
-def make_events(events: typing.Sequence[google.cloud.aiplatform_v1beta1.types.event.Event]) -> typing.Sequence[google.cloud.aiplatform_v1beta1.types.event.Event]:
-    events = events
+def make_events(artifact: str) -> typing.Sequence[google.cloud.aiplatform_v1beta1.types.event.Event]:
+    events = [{'artifact': artifact}]
 
     return events
 

@@ -17,7 +17,9 @@ from google.cloud import aiplatform_v1beta1
 
 
 def suggest_trials_sample(
-    request: google.cloud.aiplatform_v1beta1.types.vizier_service.SuggestTrialsRequest,
+    project: str,
+    study_id: str,
+    location: str = "us-central1",
     api_endpoint: str = "us-central1-aiplatform.googleapis.com",
     timeout: int = 300,
 ):
@@ -26,6 +28,8 @@ def suggest_trials_sample(
     # Initialize client that will be used to create and send requests.
     # This client only needs to be created once, and can be reused for multiple requests.
     client = aiplatform_v1beta1.VizierServiceClient(client_options=client_options)
+    request = {"parent": parent}
+    parent = client.study_path(project=project, location=location, study=study_id)
     response = client.suggest_trials(request=request)
     print("Long running operation:", response.operation.name)
     suggest_trials_response = response.result(timeout=timeout)

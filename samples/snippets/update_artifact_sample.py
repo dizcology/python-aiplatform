@@ -20,7 +20,7 @@ def update_artifact_sample(
     project: str,
     metadata_store_id: str,
     artifact_id: str,
-    update_mask: google.protobuf.field_mask_pb2.FieldMask,
+    display_name: str,
     location: str = "us-central1",
     api_endpoint: str = "us-central1-aiplatform.googleapis.com",
 ):
@@ -29,7 +29,9 @@ def update_artifact_sample(
     # Initialize client that will be used to create and send requests.
     # This client only needs to be created once, and can be reused for multiple requests.
     client = aiplatform_v1beta1.MetadataServiceClient(client_options=client_options)
-    artifact = client.artifact_path(
+    artifact = {"name": name, "display_name": display_name}
+    update_mask = {"paths": ["display_name"]}
+    name = client.artifact_path(
         project=project,
         location=location,
         metadata_store=metadata_store_id,

@@ -21,7 +21,7 @@ def update_tensorboard_run_sample(
     tensorboard_id: str,
     experiment_id: str,
     run_id: str,
-    update_mask: google.protobuf.field_mask_pb2.FieldMask,
+    display_name: str,
     location: str = "us-central1",
     api_endpoint: str = "us-central1-aiplatform.googleapis.com",
 ):
@@ -30,7 +30,9 @@ def update_tensorboard_run_sample(
     # Initialize client that will be used to create and send requests.
     # This client only needs to be created once, and can be reused for multiple requests.
     client = aiplatform_v1beta1.TensorboardServiceClient(client_options=client_options)
-    tensorboard_run = client.tensorboard_run_path(
+    tensorboard_run = {"name": name, "display_name": display_name}
+    update_mask = {"paths": ["display_name"]}
+    name = client.tensorboard_run_path(
         project=project,
         location=location,
         tensorboard=tensorboard_id,

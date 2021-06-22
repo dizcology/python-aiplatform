@@ -18,7 +18,7 @@ from google.cloud import aiplatform_v1beta1
 
 def deploy_index_sample(
     index_endpoint: str,
-    deployed_index: google.cloud.aiplatform_v1beta1.types.index_endpoint.DeployedIndex,
+    display_name: str,
     api_endpoint: str = "us-central1-aiplatform.googleapis.com",
     timeout: int = 300,
 ):
@@ -29,6 +29,7 @@ def deploy_index_sample(
     client = aiplatform_v1beta1.IndexEndpointServiceClient(
         client_options=client_options
     )
+    deployed_index = {"display_name": display_name}
     response = client.deploy_index(
         index_endpoint=index_endpoint, deployed_index=deployed_index
     )

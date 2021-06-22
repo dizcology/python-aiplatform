@@ -18,7 +18,7 @@ from google.cloud import aiplatform_v1beta1
 
 def create_study_sample(
     project: str,
-    study: google.cloud.aiplatform_v1beta1.types.study.Study,
+    display_name: str,
     location: str = "us-central1",
     api_endpoint: str = "us-central1-aiplatform.googleapis.com",
 ):
@@ -27,6 +27,7 @@ def create_study_sample(
     # Initialize client that will be used to create and send requests.
     # This client only needs to be created once, and can be reused for multiple requests.
     client = aiplatform_v1beta1.VizierServiceClient(client_options=client_options)
+    study = {"display_name": display_name}
     parent = f"projects/{project}/locations/{location}"
     response = client.create_study(parent=parent, study=study)
     print("response:", response)

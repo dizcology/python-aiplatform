@@ -18,9 +18,7 @@ from google.cloud import aiplatform_v1beta1
 
 def write_tensorboard_run_data_sample(
     tensorboard_run: str,
-    time_series_data: typing.Sequence[
-        google.cloud.aiplatform_v1beta1.types.tensorboard_data.TimeSeriesData
-    ],
+    tensorboard_time_series_id: str,
     api_endpoint: str = "us-central1-aiplatform.googleapis.com",
 ):
     # The AI Platform services require regional API endpoints.
@@ -28,6 +26,7 @@ def write_tensorboard_run_data_sample(
     # Initialize client that will be used to create and send requests.
     # This client only needs to be created once, and can be reused for multiple requests.
     client = aiplatform_v1beta1.TensorboardServiceClient(client_options=client_options)
+    time_series_data = [{"tensorboard_time_series_id": tensorboard_time_series_id}]
     response = client.write_tensorboard_run_data(
         tensorboard_run=tensorboard_run, time_series_data=time_series_data
     )

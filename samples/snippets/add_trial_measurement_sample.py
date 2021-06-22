@@ -17,14 +17,14 @@ from google.cloud import aiplatform_v1beta1
 
 
 def add_trial_measurement_sample(
-    request: google.cloud.aiplatform_v1beta1.types.vizier_service.AddTrialMeasurementRequest,
-    api_endpoint: str = "us-central1-aiplatform.googleapis.com",
+    trial_name: str, api_endpoint: str = "us-central1-aiplatform.googleapis.com"
 ):
     # The AI Platform services require regional API endpoints.
     client_options = {"api_endpoint": api_endpoint}
     # Initialize client that will be used to create and send requests.
     # This client only needs to be created once, and can be reused for multiple requests.
     client = aiplatform_v1beta1.VizierServiceClient(client_options=client_options)
+    request = {"trial_name": trial_name}
     response = client.add_trial_measurement(request=request)
     print("response:", response)
 
